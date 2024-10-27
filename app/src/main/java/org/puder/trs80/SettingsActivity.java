@@ -26,6 +26,7 @@ import android.view.View;
 
 import androidx.core.view.MenuItemCompat;
 
+import java.util.Objects;
 public class SettingsActivity extends BaseActivity {
 
     public static final String SHARED_PREF_NAME       = "Settings";
@@ -52,7 +53,7 @@ public class SettingsActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         // Dummy view. Will be replaced by SettingsFragment.
         setContentView(new View(this));
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        Objects.requireNonNull(getSupportActionBar()).setDisplayHomeAsUpEnabled(true);
         getFragmentManager().beginTransaction()
                 .replace(android.R.id.content, new SettingsFragment()).commit();
     }
