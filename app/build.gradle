@@ -121,6 +121,11 @@ android {
         }
     }
     namespace 'org.puder.trs80'
+    android {
+        lint {
+            baseline = file("lint-baseline.xml")
+        }
+    }
 }
 
 clean {
